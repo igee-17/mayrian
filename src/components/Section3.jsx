@@ -4,7 +4,7 @@ import { projectsSliderData } from "../utils/data";
 
 const Section3 = () => {
   return (
-    <div className="bg-[#222] pt-40 pb-[198px] px-4 sm:px-8 md:px-12">
+    <div className="bg-[#222] pt-40 pb-[198px] max-w-[1248px] mx-auto">
       <h1 className="text-center text-white text-5xl font-medium font-['GT Walsheim Trial'] leading-[56px]">
         Selected Projects
       </h1>

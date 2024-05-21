@@ -4,6 +4,8 @@ import { Carousel, IconButton, Typography } from "@material-tailwind/react";
 import { articleSliderData } from "../utils/data";
 import { Sticky, StickyContainer } from "react-sticky";
 import { FaArrowRightLong } from "react-icons/fa6";
+import MouseTracker from "./MouseTracker";
+import ImageCarousel from "./ImageCarousel";
 
 const Section1 = () => {
   const repeatCount = 4;
@@ -72,15 +74,17 @@ const Section1 = () => {
 
   return (
     <>
-      <div className="flex flex-col px-[72px] mx-auto justify-end lg:flex-row gap-14  mt-12">
-        {/* <div className="sticky top-0 left-0">
-          <img
-            src={articleMain}
-            alt="Main Article"
-            className="w-full lg:w-auto"
-          />
-        </div> */}
-        <StickyContainer>
+      <div className="flex flex-col px-[72px] mx-auto justify-center lg:flex-row gap-14  mt-12">
+        <div className="relative">
+          <div className="sticky top-[48px] left-0">
+            <img
+              src={articleMain}
+              alt="Main Article"
+              className="w-full lg:w-auto"
+            />
+          </div>
+        </div>
+        {/* <StickyContainer className="border-2 border-red-900 w-full relative">
           <Sticky relative={false}>
             {({ style }) => (
               <div
@@ -92,6 +96,7 @@ const Section1 = () => {
                   left: "72px",
                   height: "620px",
                   top: "48px",
+                  position: "absolute",
                 }}
               >
                 <img
@@ -102,7 +107,7 @@ const Section1 = () => {
               </div>
             )}
           </Sticky>
-        </StickyContainer>
+        </StickyContainer> */}
         <article className="flex flex-col w-[620px] max-w-full lg:max-w-2xl">
           <div className="w-[620px] h-[180px] flex-col justify-start items-start inline-flex">
             <div className="w-[620px] h-[60px] justify-center items-center inline-flex">
@@ -141,7 +146,8 @@ const Section1 = () => {
               </div>
             </React.Fragment>
           ))}
-          <Carousel
+          <ImageCarousel />
+          {/* <Carousel
             ref={carouselRef}
             className="mt-8"
             nextArrow={({ handleNext }) => (
@@ -173,7 +179,7 @@ const Section1 = () => {
                 />
               </div>
             ))}
-          </Carousel>
+          </Carousel> */}
         </article>
       </div>
     </>

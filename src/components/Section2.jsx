@@ -2,6 +2,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { serviceSliderData } from "../utils/data";
 import "tailwindcss/tailwind.css";
+import MouseTracker from "./MouseTracker";
+import ImageCarousel from "./ImageCarousel";
 
 const Section2 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -40,23 +42,23 @@ const Section2 = () => {
   const progressPercentage =
     (currentIndex / (serviceSliderData.length - 3)) * 100;
   return (
-    <div className="flex relative z-10 bg-[#222] flex-col items-center gap-14 px-4 sm:px-8 md:px-12">
+    <div className="flex relative z-10 bg-[#222] flex-col items-center gap-14">
       <p className="text-center text-white text-5xl font-medium font-['GT Walsheim Trial'] leading-[56px] mt-40">
         Our Services
       </p>
       <div
         ref={carouselRef} // Add ref to the carousel container
-        className="overflow-x-scroll no-scrollbar scroll-smooth flex gap-4 w-full max-w-7xl snap-x snap-mandatory"
+        className="overflow-x-scroll no-scrollbar scroll-smooth flex gap-4 w-full snap-x snap-mandatory"
       >
         {serviceSliderData.map((item, index) => (
           <div
             key={item.id}
-            className="snap-center shrink-0 w-[320px] sm:w-[400px]" // Make each item snappable and control width
+            className="snap-center shrink-0 w-[30%] h-[380px]" // Make each item snappable and control width
           >
             <img
               src={item.url}
               alt={item.title || "Service"}
-              className="w-full object-cover"
+              className="w-full object-cover "
             />
           </div>
         ))}
